@@ -37,6 +37,7 @@ def predict_class(sentence):
     results.sort(key=lambda x: x[1], reverse=True)
     return [{'intent': classes[r[0]], 'probability': str(r[1])} for r in results]
 
+
 def get_response(intents_list, intents_json):
     if intents_list:
         tag = intents_list[0]['intent']  # Cambiado de 'intents_digit' a 'intents_list'
@@ -46,4 +47,3 @@ def get_response(intents_list, intents_json):
                 result = random.choice(i['responses'])
                 return result
     return "Lo siento, no entendí eso."
-
